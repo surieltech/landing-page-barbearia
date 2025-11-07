@@ -1,0 +1,174 @@
+/* ===== SEÇÃO ABOUT ===== */
+#about {
+    padding: 6rem 0;
+    background: var(--light-color);
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    margin-bottom: 4rem;
+}
+
+.about-story h3 {
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+}
+
+.about-quote {
+    background: white;
+    padding: 2rem;
+    border-left: 4px solid var(--secondary-color);
+    margin: 2rem 0;
+    box-shadow: var(--shadow);
+}
+
+.about-quote cite {
+    display: block;
+    margin-top: 1rem;
+    font-style: normal;
+    color: var(--text-light);
+    font-weight: 500;
+}
+
+.about-features {
+    display: grid;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.feature {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.feature i {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    margin-top: 0.25rem;
+}
+
+.about-image {
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+}
+
+.about-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.experience-badge {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: var(--primary-color);
+    color: white;
+    padding: 1rem;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: var(--shadow);
+}
+
+.years {
+    display: block;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.about-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.stat {
+    text-align: center;
+    padding: 1.5rem;
+    background: white;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+}
+
+.stat .number {
+    display: block;
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.stat .label {
+    color: var(--text-light);
+    font-size: 0.9rem;
+}
+
+.about-values {
+    margin-top: 4rem;
+}
+
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.value-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease;
+}
+
+.value-card:hover {
+    transform: translateY(-5px);
+}
+
+.value-card i {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.journey-section {
+    margin-top: 4rem;
+}
+
+.journey-timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 2rem auto 0;
+}
+
+.timeline-item {
+    display: flex;
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+.timeline-year {
+    background: var(--primary-color);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 25px;
+    font-weight: bold;
+    min-width: 80px;
+    text-align: center;
+    margin-right: 2rem;
+}
+
+.timeline-content {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    flex: 1;
+}

@@ -1,0 +1,109 @@
+/* ===== HEADER E NAVEGAÇÃO ===== */
+header {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    box-shadow: var(--shadow);
+}
+
+#navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+}
+
+.logo h2 {
+    margin: 0;
+    font-size: 1.8rem;
+}
+
+.logo span {
+    color: var(--primary-color);
+}
+
+#nav_list {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-item a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 500;
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+.nav-item a:hover {
+    color: var(--primary-color);
+}
+
+.nav-item.active a {
+    color: var(--primary-color);
+}
+
+.nav-item.active a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--primary-color);
+}
+
+.instagram-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 25px;
+    font-weight: 500;
+    transition: transform 0.3s ease;
+}
+
+.instagram-btn:hover {
+    transform: translateY(-2px);
+}
+
+#mobile_btn {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: var(--dark-color);
+    cursor: pointer;
+}
+
+#mobile_menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: white;
+    box-shadow: var(--shadow-lg);
+    padding: 1rem;
+}
+
+#mobile_nav_list {
+    list-style: none;
+}
+
+#mobile_nav_list .nav-item {
+    margin-bottom: 0.5rem;
+}
+
+#mobile_nav_list .nav-item a {
+    display: block;
+    padding: 0.5rem 0;
+}
