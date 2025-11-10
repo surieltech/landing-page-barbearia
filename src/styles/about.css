@@ -1,174 +1,668 @@
-/* ===== SEÇÃO ABOUT ===== */
+/* ===== SEÇÃO ABOUT - MODERNA E ATRAENTE ===== */
 #about {
-    padding: 6rem 0;
-    background: var(--light-color);
+    padding: 8rem 0;
+    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 50%, #f8f9fa 100%);
+    position: relative;
+    overflow: hidden;
 }
 
+#about::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--secondary-color), transparent);
+}
+
+/* ===== HEADER DA SEÇÃO ===== */
+.about-header {
+    text-align: center;
+    margin-bottom: 6rem;
+    position: relative;
+}
+
+.about-header h2 {
+    font-size: 3.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+    position: relative;
+    display: inline-block;
+}
+
+.about-header h2::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--secondary-color), var(--accent-color));
+    border-radius: 2px;
+}
+
+.about-header p {
+    font-size: 1.3rem;
+    color: var(--text-light);
+    max-width: 600px;
+    margin: 2rem auto 0;
+    line-height: 1.6;
+}
+
+/* ===== LAYOUT PRINCIPAL MODERNO ===== */
 .about-content {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-    margin-bottom: 4rem;
+    gap: 5rem;
+    align-items: start;
+    margin-bottom: 6rem;
+}
+
+.about-text {
+    padding-right: 2rem;
 }
 
 .about-story h3 {
+    font-size: 2.5rem;
     color: var(--primary-color);
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
+    line-height: 1.3;
+    position: relative;
+    padding-left: 2rem;
 }
 
+.about-story h3::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: linear-gradient(to bottom, var(--secondary-color), var(--accent-color));
+    border-radius: 2px;
+}
+
+.about-story p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--text-color);
+    margin-bottom: 2rem;
+    text-align: justify;
+}
+
+/* ===== CARTA DE DESTAQUE MODERNA ===== */
 .about-quote {
-    background: white;
-    padding: 2rem;
-    border-left: 4px solid var(--secondary-color);
-    margin: 2rem 0;
-    box-shadow: var(--shadow);
+    background: linear-gradient(135deg, #ffffff, #f8f4e9);
+    padding: 2.5rem;
+    border-radius: 20px;
+    border-left: 5px solid var(--secondary-color);
+    margin: 3rem 0;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+    position: relative;
+    border: 1px solid rgba(212, 175, 55, 0.1);
+}
+
+.about-quote::before {
+    content: '"';
+    position: absolute;
+    top: 20px;
+    left: 25px;
+    font-size: 5rem;
+    color: var(--secondary-color);
+    opacity: 0.2;
+    font-family: Georgia, serif;
+    line-height: 1;
+}
+
+.about-quote p {
+    font-style: italic;
+    font-size: 1.2rem;
+    line-height: 1.7;
+    color: var(--dark-color);
+    margin-bottom: 1.5rem;
+    position: relative;
+    z-index: 1;
 }
 
 .about-quote cite {
     display: block;
-    margin-top: 1rem;
+    text-align: right;
     font-style: normal;
-    color: var(--text-light);
-    font-weight: 500;
+    color: var(--secondary-color);
+    font-weight: 600;
+    font-size: 1rem;
 }
 
-.about-features {
-    display: grid;
-    gap: 1.5rem;
-    margin-top: 2rem;
+.about-quote cite::before {
+    content: '— ';
 }
 
-.feature {
+/* ===== LADO VISUAL ATRAENTE ===== */
+.about-visual {
+    position: relative;
     display: flex;
-    align-items: flex-start;
-    gap: 1rem;
-}
-
-.feature i {
-    color: var(--primary-color);
-    font-size: 1.5rem;
-    margin-top: 0.25rem;
+    flex-direction: column;
+    gap: 3rem;
 }
 
 .about-image {
     position: relative;
-    border-radius: 10px;
+    border-radius: 20px;
     overflow: hidden;
-    box-shadow: var(--shadow-lg);
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.15);
+    transform: perspective(1000px) rotateY(-5deg);
+    transition: all 0.5s ease;
+}
+
+.about-image:hover {
+    transform: perspective(1000px) rotateY(0deg);
 }
 
 .about-image img {
     width: 100%;
-    height: auto;
+    height: 400px;
+    object-fit: cover;
     display: block;
+    transition: transform 0.5s ease;
+}
+
+.about-image:hover img {
+    transform: scale(1.05);
 }
 
 .experience-badge {
     position: absolute;
-    top: 20px;
-    right: 20px;
-    background: var(--primary-color);
+    top: 30px;
+    right: 30px;
+    background: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
     color: white;
-    padding: 1rem;
-    border-radius: 10px;
+    padding: 2rem;
+    border-radius: 50%;
     text-align: center;
-    box-shadow: var(--shadow);
+    box-shadow: 0 15px 35px rgba(212, 175, 55, 0.3);
+    width: 120px;
+    height: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 5px solid white;
+    z-index: 2;
+    animation: float 3s ease-in-out infinite;
 }
 
-.years {
-    display: block;
-    font-size: 2rem;
-    font-weight: bold;
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
 }
 
+.experience-badge .years {
+    font-size: 2.2rem;
+    font-weight: 800;
+    line-height: 1;
+    margin-bottom: 0.3rem;
+}
+
+.experience-badge .text {
+    font-size: 0.8rem;
+    font-weight: 600;
+    line-height: 1.2;
+    opacity: 0.9;
+}
+
+/* ===== ESTATÍSTICAS MODERNAS ===== */
 .about-stats {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 1rem;
-    margin-top: 2rem;
-}
-
-.stat {
-    text-align: center;
-    padding: 1.5rem;
-    background: white;
-    border-radius: 10px;
-    box-shadow: var(--shadow);
-}
-
-.stat .number {
-    display: block;
-    font-size: 2rem;
-    font-weight: bold;
-    color: var(--primary-color);
-}
-
-.stat .label {
-    color: var(--text-light);
-    font-size: 0.9rem;
-}
-
-.about-values {
-    margin-top: 4rem;
-}
-
-.values-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 2rem;
     margin-top: 2rem;
 }
 
-.value-card {
+.stat {
     background: white;
-    padding: 2rem;
-    border-radius: 10px;
+    padding: 2.5rem 1.5rem;
+    border-radius: 15px;
     text-align: center;
-    box-shadow: var(--shadow);
-    transition: transform 0.3s ease;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+    transition: all 0.4s ease;
+    border: 1px solid rgba(212, 175, 55, 0.1);
+    position: relative;
+    overflow: hidden;
 }
 
-.value-card:hover {
-    transform: translateY(-5px);
+.stat::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--secondary-color), var(--accent-color));
 }
 
-.value-card i {
+.stat:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+}
+
+.stat .number {
+    display: block;
+    font-size: 3rem;
+    font-weight: 800;
+    color: var(--secondary-color);
+    margin-bottom: 0.5rem;
+    line-height: 1;
+    position: relative;
+    z-index: 1;
+}
+
+.stat .label {
+    color: var(--text-light);
+    font-size: 0.95rem;
+    font-weight: 500;
+    position: relative;
+    z-index: 1;
+}
+
+/* ===== VALORES E FILOSOFIA ===== */
+.about-values {
+    margin-top: 6rem;
+    text-align: center;
+}
+
+.about-values h3 {
     font-size: 2.5rem;
     color: var(--primary-color);
     margin-bottom: 1rem;
+    position: relative;
+    display: inline-block;
 }
 
-.journey-section {
+.about-values h3::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--secondary-color), var(--accent-color));
+    border-radius: 2px;
+}
+
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 3rem;
     margin-top: 4rem;
+}
+
+.value-card {
+    background: white;
+    padding: 3rem 2rem;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid rgba(212, 175, 55, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.value-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--secondary-color), var(--accent-color));
+}
+
+.value-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(255, 249, 240, 0.1), transparent);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.value-card:hover::after {
+    opacity: 1;
+}
+
+.value-card:hover {
+    transform: translateY(-15px) scale(1.02);
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.15);
+}
+
+.value-card i {
+    font-size: 3rem;
+    color: var(--secondary-color);
+    margin-bottom: 1.5rem;
+    background: linear-gradient(135deg, #fff9f0, #ffecc7);
+    padding: 1.5rem;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.value-card:hover i {
+    transform: scale(1.1) rotate(5deg);
+    background: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
+    color: white;
+}
+
+.value-card h4 {
+    font-size: 1.4rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    position: relative;
+    z-index: 1;
+}
+
+.value-card p {
+    font-size: 1rem;
+    color: var(--text-light);
+    line-height: 1.6;
+    position: relative;
+    z-index: 1;
+}
+
+/* ===== LINHA DO TEMPO MODERNA ===== */
+.journey-section {
+    margin-top: 6rem;
+    background: white;
+    padding: 4rem;
+    border-radius: 25px;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.08);
+    position: relative;
+    border: 1px solid rgba(212, 175, 55, 0.1);
+}
+
+.journey-section h3 {
+    font-size: 2.2rem;
+    color: var(--primary-color);
+    margin-bottom: 3rem;
+    text-align: center;
+    position: relative;
+}
+
+.journey-section h3::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--secondary-color), var(--accent-color));
+    border-radius: 2px;
 }
 
 .journey-timeline {
     position: relative;
-    max-width: 800px;
-    margin: 2rem auto 0;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.journey-timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    background: linear-gradient(to bottom, var(--secondary-color), var(--accent-color));
+    border-radius: 1px;
 }
 
 .timeline-item {
     display: flex;
-    margin-bottom: 2rem;
+    margin-bottom: 4rem;
     position: relative;
+    align-items: center;
+}
+
+.timeline-item:nth-child(odd) {
+    flex-direction: row-reverse;
 }
 
 .timeline-year {
-    background: var(--primary-color);
+    background: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
     color: white;
-    padding: 0.5rem 1rem;
+    padding: 1rem 1.5rem;
     border-radius: 25px;
-    font-weight: bold;
-    min-width: 80px;
+    font-weight: 700;
+    min-width: 100px;
     text-align: center;
-    margin-right: 2rem;
+    margin: 0 2rem;
+    box-shadow: 0 8px 20px rgba(212, 175, 55, 0.3);
+    position: relative;
+    z-index: 2;
+    border: 3px solid white;
+    transition: all 0.3s ease;
+}
+
+.timeline-item:hover .timeline-year {
+    transform: scale(1.05);
 }
 
 .timeline-content {
-    background: white;
-    padding: 1.5rem;
-    border-radius: 10px;
-    box-shadow: var(--shadow);
+    background: #f8f9fa;
+    padding: 2.5rem;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
     flex: 1;
+    border-left: 4px solid var(--secondary-color);
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.timeline-item:nth-child(odd) .timeline-content {
+    border-left: none;
+    border-right: 4px solid var(--accent-color);
+}
+
+.timeline-content:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+    background: white;
+}
+
+.timeline-content h4 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+}
+
+.timeline-content p {
+    color: var(--text-light);
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* ===== ANIMAÇÕES ADICIONAIS ===== */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.about-content,
+.about-values,
+.journey-section {
+    animation: fadeInUp 0.8s ease-out;
+}
+
+/* ===== RESPONSIVIDADE ===== */
+@media (max-width: 1024px) {
+    .about-content {
+        gap: 4rem;
+    }
+    
+    .about-stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .journey-timeline::before {
+        left: 30px;
+    }
+    
+    .timeline-item {
+        flex-direction: row !important;
+        padding-left: 60px;
+    }
+    
+    .timeline-year {
+        position: absolute;
+        left: 0;
+        margin: 0;
+        min-width: 80px;
+    }
+    
+    .timeline-content {
+        border-left: 4px solid var(--secondary-color) !important;
+        border-right: none !important;
+    }
+}
+
+@media (max-width: 768px) {
+    #about {
+        padding: 5rem 0;
+    }
+    
+    .about-content {
+        grid-template-columns: 1fr;
+        gap: 4rem;
+    }
+    
+    .about-text {
+        padding-right: 0;
+    }
+    
+    .about-header h2 {
+        font-size: 2.5rem;
+    }
+    
+    .about-story h3 {
+        font-size: 1.8rem;
+        padding-left: 1.5rem;
+    }
+    
+    .about-stats {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .values-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .journey-section {
+        padding: 2.5rem 1.5rem;
+        margin-top: 4rem;
+    }
+    
+    .about-image {
+        transform: none;
+    }
+    
+    .experience-badge {
+        width: 100px;
+        height: 100px;
+        padding: 1.5rem;
+    }
+    
+    .experience-badge .years {
+        font-size: 1.8rem;
+    }
+    
+    .stat {
+        padding: 2rem 1rem;
+    }
+    
+    .stat .number {
+        font-size: 2.5rem;
+    }
+    
+    .value-card {
+        padding: 2.5rem 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .about-header h2 {
+        font-size: 2rem;
+    }
+    
+    .about-header p {
+        font-size: 1.1rem;
+    }
+    
+    .about-quote {
+        padding: 2rem 1.5rem;
+    }
+    
+    .about-image img {
+        height: 300px;
+    }
+    
+    .timeline-content {
+        padding: 2rem 1.5rem;
+    }
+    
+    .journey-section {
+        padding: 2rem 1rem;
+    }
+    
+    .value-card {
+        padding: 2rem 1rem;
+    }
+    
+    .value-card i {
+        font-size: 2.5rem;
+        padding: 1.2rem;
+    }
+}
+
+/* ===== EFEITOS ESPECIAIS ===== */
+.stat:hover .number {
+    animation: pulse 1s ease-in-out;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+.value-card:hover h4 {
+    color: var(--secondary-color);
+    transition: color 0.3s ease;
+}
+
+/* ===== DECORAÇÃO SUTIL ===== */
+.about-content::before {
+    content: '';
+    position: absolute;
+    top: -50px;
+    right: -50px;
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle, rgba(212, 175, 55, 0.05) 0%, transparent 70%);
+    z-index: 0;
 }

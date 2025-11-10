@@ -1,109 +1,368 @@
-/* ===== HEADER E NAVEGAÇÃO ===== */
+/* ===== HEADER E NAVEGAÇÃO - APRIMORADO ===== */
 header {
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     z-index: 1000;
-    box-shadow: var(--shadow);
+    box-shadow: 0 2px 30px rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+}
+
+header.scrolled {
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 5px 40px rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(30px);
 }
 
 #navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 0;
+    padding: 1.2rem 0;
+}
+
+/* ===== LOGO ===== */
+.logo {
+    display: flex;
+    align-items: center;
 }
 
 .logo h2 {
     margin: 0;
-    font-size: 1.8rem;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    letter-spacing: -0.5px;
 }
 
 .logo span {
-    color: var(--primary-color);
+    color: #d4af37;
+    background: linear-gradient(135deg, #d4af37, #f7c652);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
+/* ===== MENU PRINCIPAL - CORES DIFERENCIADAS ===== */
 #nav_list {
     display: flex;
     list-style: none;
-    gap: 2rem;
+    gap: 2.5rem;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-item {
+    position: relative;
 }
 
 .nav-item a {
     text-decoration: none;
-    color: var(--text-color);
-    font-weight: 500;
-    transition: color 0.3s ease;
+    color: var(--text-light) !important; /* Cor mais clara para itens não selecionados */
+    font-weight: 500; /* Peso médio para itens normais */
+    font-size: 1.05rem;
+    transition: all 0.3s ease;
+    padding: 0.5rem 0;
     position: relative;
+    display: block;
+}
+
+.nav-item a::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--secondary-color), var(--accent-color));
+    transition: width 0.3s ease;
+    border-radius: 1px;
 }
 
 .nav-item a:hover {
-    color: var(--primary-color);
+    color: var(--secondary-color) !important; /* Dourado no hover */
+    transform: translateY(-1px);
 }
 
+.nav-item a:hover::before {
+    width: 100%;
+}
+
+/* Item ativo - destaque máximo */
 .nav-item.active a {
-    color: var(--primary-color);
+    color: var(--secondary-color) !important; /* Dourado forte */
+    font-weight: 700; /* Negrito para o item ativo */
 }
 
 .nav-item.active a::after {
     content: '';
     position: absolute;
-    bottom: -5px;
+    bottom: 0;
     left: 0;
     width: 100%;
     height: 2px;
-    background: var(--primary-color);
+    background: linear-gradient(90deg, var(--secondary-color), var(--accent-color));
+    border-radius: 1px;
+    box-shadow: 0 2px 8px rgba(212, 175, 55, 0.3);
 }
 
+/* ===== BOTÃO INSTAGRAM ===== */
 .instagram-btn {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: 0.7rem;
     background: linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);
     color: white;
     text-decoration: none;
-    padding: 0.5rem 1rem;
-    border-radius: 25px;
-    font-weight: 500;
-    transition: transform 0.3s ease;
+    padding: 0.8rem 1.5rem;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 15px rgba(228, 64, 95, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.instagram-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.instagram-btn:hover::before {
+    left: 100%;
 }
 
 .instagram-btn:hover {
-    transform: translateY(-2px);
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 8px 25px rgba(228, 64, 95, 0.4);
 }
 
+.instagram-btn i {
+    font-size: 1.2rem;
+}
+
+/* ===== BOTÃO MOBILE - SEMPRE DOURADO ===== */
 #mobile_btn {
     display: none;
     background: none;
     border: none;
-    font-size: 1.5rem;
-    color: var(--dark-color);
+    font-size: 1.6rem;
+    color: var(--secondary-color) !important; /* Alterado para dourado */
     cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    width: 50px;
+    height: 50px;
+    align-items: center;
+    justify-content: center;
 }
 
+#mobile_btn:hover {
+    background: rgba(212, 175, 55, 0.2); /* Fundo dourado suave no hover */
+    color: var(--secondary-color);
+    transform: scale(1.1);
+}
+
+/* Garantir que o ícone permaneça dourado em todos os estados */
+#mobile_btn i {
+    color: var(--secondary-color) !important;
+}
+
+/* ===== MENU MOBILE - TEMA ESCURO ===== */
 #mobile_menu {
     display: none;
-    position: absolute;
+    position: fixed;
     top: 100%;
     left: 0;
     right: 0;
-    background: white;
-    box-shadow: var(--shadow-lg);
-    padding: 1rem;
+    background: rgba(26, 26, 26, 0.98) !important;
+    backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(30px);
+    box-shadow: 0 10px 50px rgba(0, 0, 0, 0.15);
+    padding: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    transform: translateY(-10px);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+#mobile_menu.active {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
 }
 
 #mobile_nav_list {
     list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
 }
 
 #mobile_nav_list .nav-item {
-    margin-bottom: 0.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 0.8rem 0;
+}
+
+#mobile_nav_list .nav-item:last-child {
+    border-bottom: none;
 }
 
 #mobile_nav_list .nav-item a {
     display: block;
-    padding: 0.5rem 0;
+    padding: 0.8rem 1rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: white !important;
+}
+
+#mobile_nav_list .nav-item a:hover {
+    background: linear-gradient(135deg, rgba(212, 175, 55, 0.2), rgba(139, 69, 19, 0.15));
+    color: var(--secondary-color) !important;
+    transform: translateX(5px);
+}
+
+#mobile_nav_list .nav-item.active a {
+    background: linear-gradient(135deg, rgba(212, 175, 55, 0.25), rgba(139, 69, 19, 0.2));
+    color: var(--secondary-color) !important;
+    font-weight: 600;
+    border-left: 4px solid var(--secondary-color);
+}
+
+.instagram-mobile {
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.instagram-mobile a {
+    display: flex !important;
+    align-items: center;
+    gap: 0.8rem;
+    background: linear-gradient(45deg, #405de6, #833ab4) !important;
+    color: white !important;
+    justify-content: center;
+    border-left: none !important;
+}
+
+.instagram-mobile a:hover {
+    background: linear-gradient(45deg, #833ab4, #405de6) !important;
+    transform: translateY(-2px) !important;
+}
+
+/* ===== RESPONSIVIDADE ===== */
+@media (max-width: 1024px) {
+    #nav_list {
+        gap: 2rem;
+    }
+    
+    .nav-item a {
+        font-size: 1rem;
+    }
+    
+    .instagram-btn {
+        padding: 0.7rem 1.3rem;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 768px) {
+    #navbar {
+        padding: 1rem 0;
+    }
+    
+    .logo h2 {
+        font-size: 1.6rem;
+    }
+    
+    #nav_list, .instagram-btn {
+        display: none;
+    }
+    
+    #mobile_btn {
+        display: flex;
+    }
+    
+    #mobile_menu {
+        display: block;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo h2 {
+        font-size: 1.4rem;
+    }
+    
+    #mobile_btn {
+        width: 45px;
+        height: 45px;
+        font-size: 1.4rem;
+    }
+    
+    #mobile_menu {
+        padding: 1.5rem;
+    }
+    
+    #mobile_nav_list .nav-item a {
+        padding: 0.7rem 0.8rem;
+        font-size: 1rem;
+    }
+}
+
+/* ===== ANIMAÇÃO DE SCROLL ===== */
+@keyframes slideInDown {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+header {
+    animation: slideInDown 0.5s ease-out;
+}
+
+/* ===== INDICADOR DE SCROLL ===== */
+.scroll-indicator {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #d4af37, #8b4513);
+    transition: width 0.3s ease;
+    border-radius: 2px;
+}
+
+/* ===== ESTADO DE CARREGAMENTO ===== */
+header.loading {
+    opacity: 0;
+    transform: translateY(-100%);
+}
+
+header.loaded {
+    opacity: 1;
+    transform: translateY(0);
+    transition: all 0.5s ease;
 }

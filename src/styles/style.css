@@ -16,17 +16,43 @@
 }
 
 :root {
-    --primary-color: #2563eb;
-    --primary-dark: #1d4ed8;
-    --secondary-color: #f59e0b;
-    --dark-color: #1f2937;
-    --light-color: #f8fafc;
-    --text-color: #374151;
-    --text-light: #6b7280;
-    --border-color: #e5e7eb;
-    --success-color: #10b981;
-    --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    /* Cores Principais - Tema Barbearia Clássica */
+    --primary-color: #1a1a1a;          /* Preto sofisticado */
+    --primary-dark: #000000;           /* Preto puro */
+    --secondary-color: #d4af37;        /* Dourado clássico */
+    --accent-color: #8b4513;           /* Marrom madeira */
+    --accent-light: #a0522d;           /* Marrom claro */
+    
+    /* Cores Neutras */
+    --dark-color: #2c2c2c;             /* Cinza escuro */
+    --light-color: #f5f5f5;            /* Off-white */
+    --cream-color: #f8f4e9;            /* Bege claro/creme */
+    --gray-light: #e8e8e8;             /* Cinza muito claro */
+    
+    /* Cores de Texto */
+    --text-color: #333333;             /* Preto suave */
+    --text-light: #666666;             /* Cinza médio */
+    --text-on-dark: #ffffff;           /* Branco para fundos escuros */
+    
+    /* Cores de Estado */
+    --success-color: #27ae60;          /* Verde mais escuro */
+    --warning-color: #e67e22;          /* Laranja terroso */
+    --error-color: #c0392b;            /* Vermelho vinho */
+    
+    /* Sombras */
+    --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.15);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.2);
+    --shadow-dark: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+    
+    /* Gradientes */
+    --gradient-gold: linear-gradient(135deg, #d4af37 0%, #f7ef8a 100%);
+    --gradient-wood: linear-gradient(135deg, #8b4513 0%, #a0522d 100%);
+    --gradient-dark: linear-gradient(135deg, #1a1a1a 0%, #2c2c2c 100%);
+    
+    /* Bordas */
+    --border-color: #d6d6d6;
+    --border-dark: #444444;
+    --border-gold: #d4af37;
 }
 
 html {
@@ -132,7 +158,6 @@ p {
 .whatsapp-text {
     display: none;
 }
-
 
 /* ===== RESPONSIVIDADE ===== */
 @media (max-width: 768px) {
