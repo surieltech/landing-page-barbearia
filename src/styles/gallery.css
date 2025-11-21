@@ -1,3 +1,4 @@
+/* gallery.css - CORRIGIDO */
 /* ===== SEÇÃO GALLERY ===== */
 #gallery {
     padding: 6rem 0;
@@ -40,12 +41,18 @@
     border-radius: 10px;
     overflow: hidden;
     position: relative;
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover {
+    transform: translateY(-5px);
 }
 
 .gallery-card {
     position: relative;
     aspect-ratio: 1;
     overflow: hidden;
+    cursor: pointer;
 }
 
 .gallery-card img {
@@ -86,6 +93,13 @@
 .gallery-info h4 {
     color: white;
     margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.gallery-info p {
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
 }
 
 .gallery-actions {
@@ -99,50 +113,133 @@
     background: rgba(255, 255, 255, 0.2);
     border: none;
     color: white;
-    padding: 0.5rem;
+    padding: 0.8rem;
     border-radius: 50%;
     cursor: pointer;
-    transition: background 0.3s ease;
+    transition: all 0.3s ease;
     backdrop-filter: blur(10px);
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .view-btn:hover, .like-btn:hover {
     background: rgba(255, 255, 255, 0.3);
+    transform: scale(1.1);
 }
 
-.before-after-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+/* MODAL - CORRIGIDO */
+.gallery-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
     height: 100%;
+    background: rgba(0, 0, 0, 0.95);
+    z-index: 2000;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
 }
 
-.before, .after {
+.modal-content {
     position: relative;
+    max-width: 90%;
+    max-height: 90%;
+    background: white;
+    border-radius: 15px;
     overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
 }
 
-.before .label, .after .label {
+.close-modal {
     position: absolute;
-    top: 10px;
-    padding: 0.25rem 0.75rem;
-    background: rgba(0, 0, 0, 0.7);
+    top: 15px;
+    right: 20px;
     color: white;
-    font-size: 0.8rem;
-    font-weight: bold;
+    font-size: 2rem;
+    cursor: pointer;
+    z-index: 2001;
+    background: rgba(0, 0, 0, 0.7);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s ease;
 }
 
-.before .label {
-    left: 10px;
-    background: #ef4444;
+.close-modal:hover {
+    background: rgba(0, 0, 0, 0.9);
 }
 
-.after .label {
-    right: 10px;
-    background: var(--success-color);
+.modal-image {
+    width: 100%;
+    height: auto;
+    max-height: 70vh;
+    object-fit: contain;
+    display: block;
 }
 
+.modal-info {
+    background: white;
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.modal-info h4 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+    font-size: 1.4rem;
+}
+
+.modal-info p {
+    color: var(--text-light);
+    font-size: 1rem;
+}
+
+.modal-nav {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+    padding: 0 1rem;
+    pointer-events: none;
+}
+
+.nav-btn {
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    color: white;
+    padding: 1rem;
+    border-radius: 50%;
+    cursor: pointer;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+    pointer-events: all;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+}
+
+.nav-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(1.1);
+}
+
+/* Restante do CSS permanece igual... */
 .gallery-cta {
-    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+    background: gray;
     color: white;
     padding: 4rem 2rem;
     border-radius: 15px;
@@ -170,68 +267,27 @@
     background: #e58e0b;
 }
 
-.gallery-modal {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.9);
-    z-index: 2000;
-    align-items: center;
-    justify-content: center;
-}
-
-.modal-content {
-    position: relative;
-    max-width: 90%;
-    max-height: 90%;
-}
-
-.close-modal {
-    position: absolute;
-    top: -40px;
-    right: 0;
-    color: white;
-    font-size: 2rem;
-    cursor: pointer;
-}
-
-.modal-image {
-    max-width: 100%;
-    max-height: 70vh;
-    display: block;
-}
-
-.modal-info {
-    background: white;
-    padding: 1rem;
-    text-align: center;
-}
-
-.modal-nav {
-    position: absolute;
-    top: 50%;
-    left: 0;
-    right: 0;
-    display: flex;
-    justify-content: space-between;
-    transform: translateY(-50%);
-    padding: 0 1rem;
-}
-
-.nav-btn {
-    background: rgba(255, 255, 255, 0.2);
-    border: none;
-    color: white;
-    padding: 1rem;
-    border-radius: 50%;
-    cursor: pointer;
-    backdrop-filter: blur(10px);
-    transition: background 0.3s ease;
-}
-
-.nav-btn:hover {
-    background: rgba(255, 255, 255, 0.3);
+/* RESPONSIVO */
+@media (max-width: 768px) {
+    .gallery-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1rem;
+    }
+    
+    .modal-content {
+        max-width: 95%;
+        max-height: 95%;
+    }
+    
+    .nav-btn {
+        width: 50px;
+        height: 50px;
+        padding: 0.8rem;
+    }
+    
+    .close-modal {
+        width: 40px;
+        height: 40px;
+        font-size: 1.5rem;
+    }
 }

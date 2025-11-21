@@ -128,37 +128,6 @@ p {
     color: var(--text-light);
 }
 
-/* ===== BOTÃO FLUTUANTE WHATSAPP ===== */
-.floating-whatsapp {
-    position: fixed;
-    bottom: 2rem;
-    right: 2rem;
-    z-index: 1000;
-}
-
-.whatsapp-float {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    background: #25d366;
-    color: white;
-    text-decoration: none;
-    padding: 1rem 1.5rem;
-    border-radius: 50px;
-    box-shadow: var(--shadow-lg);
-    transition: all 0.3s ease;
-    font-weight: 600;
-}
-
-.whatsapp-float:hover {
-    background: #128c7e;
-    transform: translateY(-2px);
-}
-
-.whatsapp-text {
-    display: none;
-}
-
 /* ===== RESPONSIVIDADE ===== */
 @media (max-width: 768px) {
     .container {
